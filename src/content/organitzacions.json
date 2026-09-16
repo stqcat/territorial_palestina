@@ -1,0 +1,122 @@
+[
+  {
+    "id": "assemblea-per-palestina-de-manresa",
+    "nom": "Assemblea per Palestina de Manresa",
+    "url": "https://example.org/assemblea-per-palestina-de-manresa/",
+    "logo": "../assets/logos/assemblea-per-palestina-de-manresa.png"
+  },
+  {
+    "id": "comite-de-solidaritat-del-baix-llobregat",
+    "nom": "Comitè de Solidaritat del Baix Llobregat",
+    "url": "https://example.org/comite-de-solidaritat-del-baix-llobregat/",
+    "logo": "../assets/logos/comite-de-solidaritat-del-baix-llobregat.png"
+  },
+  {
+    "id": "ateneu-popular-de-gracia",
+    "nom": "Ateneu Popular de Gràcia",
+    "url": "https://example.org/ateneu-popular-de-gracia/",
+    "logo": "../assets/logos/ateneu-popular-de-gracia.png"
+  },
+  {
+    "id": "xarxa-solidaria-de-ponent",
+    "nom": "Xarxa Solidària de Ponent",
+    "url": "https://example.org/xarxa-solidaria-de-ponent/",
+    "logo": "../assets/logos/xarxa-solidaria-de-ponent.png"
+  },
+  {
+    "id": "collectiu-kufiya-de-girona",
+    "nom": "Col·lectiu Kufiya de Girona",
+    "url": "https://example.org/collectiu-kufiya-de-girona/",
+    "logo": "../assets/logos/collectiu-kufiya-de-girona.png"
+  },
+  {
+    "id": "amics-de-gaza-del-valles",
+    "nom": "Amics de Gaza del Vallès",
+    "url": "https://example.org/amics-de-gaza-del-valles/",
+    "logo": "../assets/logos/amics-de-gaza-del-valles.png"
+  },
+  {
+    "id": "estudiants-per-palestina-de-lleida",
+    "nom": "Estudiants per Palestina de Lleida",
+    "url": "https://example.org/estudiants-per-palestina-de-lleida/",
+    "logo": "../assets/logos/estudiants-per-palestina-de-lleida.png"
+  },
+  {
+    "id": "sindicat-de-barri-de-la-marina",
+    "nom": "Sindicat de Barri de la Marina",
+    "url": "https://example.org/sindicat-de-barri-de-la-marina/",
+    "logo": "../assets/logos/sindicat-de-barri-de-la-marina.png"
+  },
+  {
+    "id": "casal-popular-de-castello",
+    "nom": "Casal Popular de Castelló",
+    "url": "https://example.org/casal-popular-de-castello/",
+    "logo": "../assets/logos/casal-popular-de-castello.png"
+  },
+  {
+    "id": "plataforma-palestina-lliure-de-mallorca",
+    "nom": "Plataforma Palestina Lliure de Mallorca",
+    "url": "https://example.org/plataforma-palestina-lliure-de-mallorca/",
+    "logo": "../assets/logos/plataforma-palestina-lliure-de-mallorca.png"
+  },
+  {
+    "id": "grup-de-solidaritat-d-alcoi",
+    "nom": "Grup de Solidaritat d'Alcoi",
+    "url": "https://example.org/grup-de-solidaritat-d-alcoi/",
+    "logo": "../assets/logos/grup-de-solidaritat-d-alcoi.png"
+  },
+  {
+    "id": "assemblea-antiimperialista-de-tarragona",
+    "nom": "Assemblea Antiimperialista de Tarragona",
+    "url": "https://example.org/assemblea-antiimperialista-de-tarragona/",
+    "logo": "../assets/logos/assemblea-antiimperialista-de-tarragona.png"
+  },
+  {
+    "id": "collectiu-olivera-de-reus",
+    "nom": "Col·lectiu Olivera de Reus",
+    "url": "https://example.org/collectiu-olivera-de-reus/",
+    "logo": "../assets/logos/collectiu-olivera-de-reus.png"
+  },
+  {
+    "id": "comite-palestina-del-maresme",
+    "nom": "Comitè Palestina del Maresme",
+    "url": "https://example.org/comite-palestina-del-maresme/",
+    "logo": "../assets/logos/comite-palestina-del-maresme.png"
+  },
+  {
+    "id": "joves-per-palestina-de-l-horta",
+    "nom": "Joves per Palestina de l'Horta",
+    "url": "https://example.org/joves-per-palestina-de-l-horta/",
+    "logo": "../assets/logos/joves-per-palestina-de-l-horta.png"
+  },
+  {
+    "id": "espai-solidari-de-la-cerdanya",
+    "nom": "Espai Solidari de la Cerdanya",
+    "url": "https://example.org/espai-solidari-de-la-cerdanya/",
+    "logo": "../assets/logos/espai-solidari-de-la-cerdanya.png"
+  },
+  {
+    "id": "ateneu-del-camp-de-morvedre",
+    "nom": "Ateneu del Camp de Morvedre",
+    "url": "https://example.org/ateneu-del-camp-de-morvedre/",
+    "logo": "../assets/logos/ateneu-del-camp-de-morvedre.png"
+  },
+  {
+    "id": "xarxa-d-entitats-de-perpinya",
+    "nom": "Xarxa d'Entitats de Perpinyà",
+    "url": "https://example.org/xarxa-d-entitats-de-perpinya/",
+    "logo": "../assets/logos/xarxa-d-entitats-de-perpinya.png"
+  },
+  {
+    "id": "assemblea-de-dones-per-palestina-d-elx",
+    "nom": "Assemblea de Dones per Palestina d'Elx",
+    "url": "https://example.org/assemblea-de-dones-per-palestina-d-elx/",
+    "logo": "../assets/logos/assemblea-de-dones-per-palestina-d-elx.png"
+  },
+  {
+    "id": "collectiu-tatreez-de-terrassa",
+    "nom": "Col·lectiu Tatreez de Terrassa",
+    "url": "https://example.org/collectiu-tatreez-de-terrassa/",
+    "logo": "../assets/logos/collectiu-tatreez-de-terrassa.png"
+  }
+]

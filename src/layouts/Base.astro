@@ -1,0 +1,79 @@
+---
+import '@fontsource/barlow/latin-400';
+import '@fontsource/barlow/latin-600';
+import '@fontsource/barlow-condensed/latin-600';
+import '@fontsource/barlow-condensed/latin-700';
+import '../styles/base.css';
+import '../styles/etiqueta.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+interface Props {
+	title: string;
+	descripcio?: string;
+	pagina: string;
+}
+
+const { title, descripcio, pagina } = Astro.props;
+
+const menu = [
+	{ href: '/boicot/', text: 'Boicot', id: 'boicot' },
+	{ href: '/manifest/', text: 'Manifest', id: 'manifest' },
+	{ href: '/qui-som/', text: 'Qui som', id: 'qui-som' },
+];
+---
+
+<html lang="ca">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		{descripcio && <meta name="description" content={descripcio} />}
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="lloc">
+			<header class="capcalera">
+				<a
+					class="capcalera__logo"
+					href="/"
+					aria-current={pagina === 'portada' ? 'page' : undefined}
+				>
+					<Image
+						src={logo}
+						alt="Territoris Catalans amb Palestina"
+						widths={[360, 720]}
+						sizes="(max-width: 48rem) 75vw, 23rem"
+					/>
+				</a>
+
+				<nav class="menu" aria-label="Seccions">
+					<ul>
+						{
+							menu.map((m) => (
+								<li>
+									<a href={m.href} aria-current={m.id === pagina ? 'page' : undefined}>
+										{m.text}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
+			</header>
+
+			<main class="contingut">
+				<slot />
+			</main>
+
+			<footer class="peu">
+				<p class="peu__nom">Territoris Catalans amb Palestina</p>
+				<p class="peu__nota">
+					Coordinadora d'entitats de solidaritat dels Països Catalans
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

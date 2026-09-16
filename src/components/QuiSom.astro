@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const organitzacions = await getCollection('organitzacions');
+---
+
+<section class="capcalera-pagina">
+	<h1>Qui som</h1>
+	<p class="lead">
+		Territoris Catalans amb Palestina coordina entitats de solidaritat de tot el
+		territori: assemblees locals, sindicats, col·lectius d'estudiants i grups de
+		barri que ja treballaven cadascun al seu poble.
+	</p>
+	<p>
+		La coordinadora no substitueix cap entitat. Serveix per decidir campanyes
+		conjuntes, compartir materials i arribar allà on una sola organització no
+		arriba.
+	</p>
+</section>
+
+<section class="entitats">
+	<h2>Entitats que hi participen</h2>
+	<ul class="entitats__llista">
+		{
+			organitzacions.map((org) => (
+				<li class="entitat">
+					<a href={org.data.url} rel="noopener">
+						{org.data.logo ? (
+							<Image src={org.data.logo} alt={org.data.nom} widths={[200, 400]} sizes="200px" />
+						) : (
+							<span class="entitat__nom">{org.data.nom}</span>
+						)}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>

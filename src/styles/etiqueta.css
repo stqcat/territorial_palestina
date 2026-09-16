@@ -1,0 +1,455 @@
+/* Proposta 3 — Etiqueta
+   El boicot es decideix al passadís del supermercat i al taulell de la
+   farmàcia. El sistema fa servir el llenguatge del lineal: etiquetes de
+   prestatge, franges de codi de barres, xifres tabulars i molt contrast. */
+
+:root {
+	--tinta: #000;
+	--paper: #fff;
+	--coral: #e25947;
+	--groc: #f5c400;
+	--gris: #6b6b6b;
+	--vora: #000;
+	--titol: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+	--text: 'Barlow', system-ui, sans-serif;
+}
+
+body {
+	background: var(--paper);
+	color: var(--tinta);
+	font-family: var(--text);
+	font-size: 1.0625rem;
+	line-height: 1.55;
+}
+
+.lloc {
+	max-width: 66rem;
+	margin-inline: auto;
+	padding: 0 1rem 4rem;
+}
+
+/* Franja de codi de barres, el separador de la casa */
+.capcalera {
+	padding: 2rem 0 0;
+}
+
+.capcalera::after {
+	content: '';
+	display: block;
+	height: 22px;
+	margin-top: 1.25rem;
+	background-image: repeating-linear-gradient(
+		90deg,
+		var(--tinta) 0 3px,
+		transparent 3px 6px,
+		var(--tinta) 6px 8px,
+		transparent 8px 14px,
+		var(--tinta) 14px 15px,
+		transparent 15px 19px
+	);
+}
+
+/* Logo centrat i menú centrat a sota: la capçalera no deixa mig ample buit */
+.capcalera__logo {
+	display: block;
+}
+
+.capcalera__logo img {
+	width: min(19rem, 62vw);
+	margin-inline: auto;
+}
+
+.menu ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 1.5rem;
+}
+
+.menu a {
+	display: block;
+	padding: 0.375rem 1rem;
+	border: 2px solid var(--vora);
+	font-family: var(--titol);
+	font-size: 1.125rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	background: var(--groc);
+}
+
+.menu a[aria-current='page'] {
+	background: var(--tinta);
+	color: var(--paper);
+}
+
+.contingut {
+	padding-top: 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--titol);
+	font-weight: 700;
+	line-height: 1.02;
+	text-transform: uppercase;
+	text-wrap: balance;
+}
+
+/* Portada: el titular dins d'una etiqueta de prestatge */
+.hero {
+	display: grid;
+	gap: 2rem;
+}
+
+@media (min-width: 52rem) {
+	.hero {
+		grid-template-columns: 1.3fr 1fr;
+		gap: 3rem;
+		align-items: start;
+	}
+}
+
+.hero__text {
+	border: 3px solid var(--vora);
+	padding: 1.5rem;
+}
+
+.hero__titol {
+	font-size: clamp(2.75rem, 8vw, 4.75rem);
+	letter-spacing: -0.01em;
+}
+
+.lead {
+	max-width: 36rem;
+	margin-top: 1rem;
+	font-size: 1.125rem;
+}
+
+.capcalera-pagina p + p {
+	max-width: 36rem;
+	margin-top: 0.75rem;
+}
+
+.accions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.5rem;
+}
+
+.accio {
+	padding: 0.75rem 1.5rem;
+	background: var(--coral);
+	color: var(--tinta);
+	font-family: var(--titol);
+	font-size: 1.25rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.accio:hover {
+	background: var(--tinta);
+	color: var(--paper);
+}
+
+.accio--discreta {
+	background: var(--paper);
+	color: var(--tinta);
+	box-shadow: inset 0 0 0 3px var(--vora);
+}
+
+.accio--discreta:hover {
+	background: var(--groc);
+	color: var(--tinta);
+}
+
+.cartell img {
+	border: 3px solid var(--vora);
+}
+
+.cartell figcaption {
+	margin-top: 0.5rem;
+	font-family: var(--titol);
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.cartell--campanya {
+	max-width: 24rem;
+	margin: 2rem 0;
+}
+
+.empreses,
+.coordinadora,
+.entitats {
+	margin-top: 3.5rem;
+}
+
+.empreses h2,
+.coordinadora h2,
+.entitats h2 {
+	font-size: clamp(1.75rem, 4vw, 2.25rem);
+	margin-bottom: 1.25rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 3px solid var(--vora);
+}
+
+/* Fitxes com etiquetes de lineal, amb la franja de preu a l'esquerra */
+.empreses__llista {
+	display: grid;
+	gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+	.empreses__llista {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.empresa {
+	display: flex;
+	flex-direction: column;
+	padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+	border: 2px solid var(--vora);
+	border-left: 12px solid var(--coral);
+}
+
+.empresa__nom {
+	font-size: 2rem;
+}
+
+.empresa__sector {
+	font-family: var(--titol);
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: var(--gris);
+}
+
+.empresa__resum {
+	margin-top: 0.75rem;
+	font-size: 0.9375rem;
+}
+
+.empresa__enllac {
+	margin-top: auto;
+	padding-top: 1rem;
+	font-family: var(--titol);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-underline-offset: 0.2em;
+}
+
+.xifra {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 1.25rem 0;
+	padding: 0.75rem 1rem;
+	background: var(--groc);
+	border: 2px solid var(--vora);
+	width: fit-content;
+}
+
+.xifra strong {
+	font-family: var(--titol);
+	font-size: 3.25rem;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+}
+
+.xifra span {
+	font-family: var(--titol);
+	font-size: 1.25rem;
+	text-transform: uppercase;
+}
+
+.coordinadora p,
+.marca__cos {
+	max-width: 38rem;
+}
+
+/* Boicot */
+.marques {
+	display: grid;
+	gap: 2rem;
+	margin-top: 2.5rem;
+}
+
+.marca {
+	border: 3px solid var(--vora);
+}
+
+.marca__cap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	padding: 0.75rem 1.25rem;
+	background: var(--tinta);
+	color: var(--paper);
+}
+
+.marca__nom {
+	font-size: clamp(2.25rem, 6vw, 3.25rem);
+}
+
+.marca__sector {
+	font-family: var(--titol);
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	color: var(--groc);
+}
+
+.marca__resum {
+	padding: 1.25rem;
+	border-bottom: 2px solid var(--vora);
+	font-size: 1.1875rem;
+	font-weight: 600;
+}
+
+.marca__cos {
+	padding: 1.25rem;
+}
+
+.marca__cos p + p,
+.marca__cos blockquote {
+	margin-top: 0.875rem;
+}
+
+.marca__cos blockquote {
+	padding: 0.75rem 1rem;
+	border: 2px dashed var(--vora);
+	font-size: 0.9375rem;
+}
+
+.marca__alternatives,
+.marca__fonts {
+	padding: 0 1.25rem 1.25rem;
+	max-width: 38rem;
+}
+
+.marca__alternatives h3,
+.marca__fonts h3 {
+	font-size: 1.375rem;
+	margin-bottom: 0.5rem;
+}
+
+.marca__alternatives {
+	border-top: 2px solid var(--vora);
+	padding-top: 1.25rem;
+	max-width: none;
+	background: repeating-linear-gradient(
+			-45deg,
+			rgba(245, 196, 0, 0.25) 0 10px,
+			transparent 10px 20px
+		)
+		left top / 100% 6px no-repeat;
+}
+
+/* Entitats */
+.entitats__llista {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+	gap: 0.75rem;
+}
+
+.entitat a {
+	display: grid;
+	place-items: center;
+	aspect-ratio: 3 / 2;
+	padding: 0.75rem;
+	border: 2px solid var(--vora);
+	text-decoration: none;
+}
+
+.entitat a:hover {
+	background: var(--groc);
+}
+
+.entitat__nom {
+	font-family: var(--titol);
+	font-size: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.peu {
+	margin-top: 4rem;
+	padding-top: 1rem;
+	border-top: 3px solid var(--vora);
+	font-family: var(--titol);
+	font-size: 1.125rem;
+	text-transform: uppercase;
+}
+
+.peu__nota {
+	color: var(--gris);
+}
+
+/* Text llarg (manifest): mesura curta i jerarquia clara, sense caixes */
+.prosa {
+	max-width: 36rem;
+	margin-top: 2.5rem;
+}
+
+.prosa h2 {
+	margin-top: 2.5rem;
+	margin-bottom: 0.75rem;
+	padding-bottom: 0.375rem;
+	border-bottom: 3px solid var(--vora);
+	font-size: clamp(1.625rem, 4vw, 2rem);
+}
+
+.prosa h2:first-child {
+	margin-top: 0;
+}
+
+.prosa h3 {
+	margin-top: 1.75rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.375rem;
+}
+
+.prosa p {
+	margin-bottom: 1rem;
+}
+
+.prosa ul,
+.prosa ol {
+	margin: 0 0 1rem;
+	padding-left: 1.25em;
+	list-style: disc;
+}
+
+.prosa ol {
+	list-style: decimal;
+	font-variant-numeric: tabular-nums;
+}
+
+.prosa li {
+	margin-bottom: 0.375rem;
+}
+
+.prosa blockquote {
+	margin: 1.5rem 0;
+	padding: 0.75rem 1rem;
+	border: 2px dashed var(--vora);
+	font-size: 0.9375rem;
+}
+
+.prosa blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.prosa a {
+	color: var(--tinta);
+	text-underline-offset: 0.2em;
+}
