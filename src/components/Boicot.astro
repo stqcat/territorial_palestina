@@ -8,62 +8,70 @@ const marques = (await getCollection('marques')).sort(
 );
 
 const continguts = await Promise.all(
-	marques.map(async (marca) => ({ marca, Content: (await render(marca)).Content })),
+	marques.map(async (marca) => ({
+		marca,
+		Content: (await render(marca)).Content,
+	})),
 );
 ---
 
 <section class="capcalera-pagina">
 	<h1>Com fer el boicot</h1>
 	<p class="lead">
-		El boicot funciona quan es manté i quan s'explica. Aquestes tres empreses són
-		el punt on la campanya concentra l'esforç aquest curs.
+		El boicot funciona quan es manté i quan s'explica. Aquestes tres empreses
+		són el punt on la campanya concentra l'esforç aquest curs.
 	</p>
 </section>
 
 <figure class="cartell cartell--campanya">
-	<Image src={cartell} alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices" widths={[400, 800, 1200]} sizes="(max-width: 48rem) 90vw, 30rem" />
+	<Image
+		src={cartell}
+		alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
+		widths={[400, 800, 1200]}
+		sizes="(max-width: 48rem) 90vw, 30rem"
+	/>
 	<figcaption>Descarrega el cartell i penja'l al teu barri o poble.</figcaption>
 </figure>
 
 <div class="marques">
-	{
-		continguts.map(({ marca, Content }) => (
-			<article class="marca" id={marca.id}>
-				<header class="marca__cap">
-					<h2 class="marca__nom">{marca.data.nom}</h2>
-					<p class="marca__sector">{marca.data.sector}</p>
-				</header>
+	{continguts.map(({ marca, Content }) => (
+		<article class="marca" id={marca.id}>
+			<header class="marca__cap">
+				<h2 class="marca__nom">{marca.data.nom}</h2>
+				<p class="marca__sector">{marca.data.sector}</p>
+			</header>
 
-				<p class="marca__resum">{marca.data.resum}</p>
+			<p class="marca__resum">{marca.data.resum}</p>
 
-				<div class="marca__cos">
-					<Content />
+			<div class="marca__cos">
+				<Content />
+			</div>
+
+			{marca.data.alternatives.length > 0 && (
+				<div class="marca__alternatives">
+					<h3>Què pots fer</h3>
+					<ul>
+						{marca.data.alternatives.map((alt) => (
+							<li>{alt}</li>
+						))}
+					</ul>
 				</div>
+			)}
 
-				{marca.data.alternatives.length > 0 && (
-					<div class="marca__alternatives">
-						<h3>Què pots fer</h3>
-						<ul>
-							{marca.data.alternatives.map((alt) => (
-								<li>{alt}</li>
-							))}
-						</ul>
-					</div>
-				)}
-
-				{marca.data.fonts.length > 0 && (
-					<div class="marca__fonts">
-						<h3>Fonts</h3>
-						<ul>
-							{marca.data.fonts.map((font) => (
-								<li>
-									<a href={font.url} rel="noopener">{font.titol}</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				)}
-			</article>
-		))
-	}
+			{marca.data.fonts.length > 0 && (
+				<div class="marca__fonts">
+					<h3>Fonts</h3>
+					<ul>
+						{marca.data.fonts.map((font) => (
+							<li>
+								<a href={font.url} rel="noopener">
+									{font.titol}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
+		</article>
+	))}
 </div>

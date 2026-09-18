@@ -51,15 +51,16 @@ const menu = [
 
 				<nav class="menu" aria-label="Seccions">
 					<ul>
-						{
-							menu.map((m) => (
-								<li>
-									<a href={m.href} aria-current={m.id === pagina ? 'page' : undefined}>
-										{m.text}
-									</a>
-								</li>
-							))
-						}
+						{menu.map((m) => (
+							<li>
+								<a
+									href={m.href}
+									aria-current={m.id === pagina ? 'page' : undefined}
+								>
+									{m.text}
+								</a>
+							</li>
+						))}
 					</ul>
 				</nav>
 			</header>

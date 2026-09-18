@@ -22,18 +22,21 @@ const organitzacions = await getCollection('organitzacions');
 <section class="entitats">
 	<h2>Entitats que hi participen</h2>
 	<ul class="entitats__llista">
-		{
-			organitzacions.map((org) => (
-				<li class="entitat">
-					<a href={org.data.url} rel="noopener">
-						{org.data.logo ? (
-							<Image src={org.data.logo} alt={org.data.nom} widths={[200, 400]} sizes="200px" />
-						) : (
-							<span class="entitat__nom">{org.data.nom}</span>
-						)}
-					</a>
-				</li>
-			))
-		}
+		{organitzacions.map((org) => (
+			<li class="entitat">
+				<a href={org.data.url} rel="noopener">
+					{org.data.logo ? (
+						<Image
+							src={org.data.logo}
+							alt={org.data.nom}
+							widths={[200, 400]}
+							sizes="200px"
+						/>
+					) : (
+						<span class="entitat__nom">{org.data.nom}</span>
+					)}
+				</a>
+			</li>
+		))}
 	</ul>
 </section>
