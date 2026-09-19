@@ -1,11 +1,11 @@
 ---
-nom: ICL
-ordre: 3
+name: ICL
+order: 3
 sector: Mineria i fertilitzants
-resum: Israel Chemicals Ltd, empresa israeliana d'extracció de minerals i producció de fertilitzants.
+summary: Israel Chemicals Ltd, empresa israeliana d'extracció de minerals i producció de fertilitzants.
 alternatives:
   - Fertilitzants de proveïdors no vinculats a ICL
-fonts: []
+sources: []
 ---
 
 ICL explota recursos minerals del mar Mort i comercialitza fertilitzants i

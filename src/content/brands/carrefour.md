@@ -1,12 +1,12 @@
 ---
-nom: Carrefour
-ordre: 2
+name: Carrefour
+order: 2
 sector: Distribució alimentària
-resum: Cadena de supermercats francesa amb presència a l'Estat espanyol, assenyalada pel moviment BDS per la seva franquícia a Israel.
+summary: Cadena de supermercats francesa amb presència a l'Estat espanyol, assenyalada pel moviment BDS per la seva franquícia a Israel.
 alternatives:
   - Comerç de proximitat i mercats municipals
   - Cooperatives de consum
-fonts: []
+sources: []
 ---
 
 El 2022 Carrefour va entrar al mercat israelià a través d'un acord de franquícia

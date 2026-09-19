@@ -1,122 +1,112 @@
 [
   {
-    "id": "assemblea-per-palestina-de-manresa",
-    "nom": "Assemblea per Palestina de Manresa",
-    "url": "https://example.org/assemblea-per-palestina-de-manresa/",
-    "logo": "../assets/logos/assemblea-per-palestina-de-manresa.png"
+    "id": "accio-solidaria-selva",
+    "name": "Acció Solidària Selva"
   },
   {
-    "id": "comite-de-solidaritat-del-baix-llobregat",
-    "nom": "Comitè de Solidaritat del Baix Llobregat",
-    "url": "https://example.org/comite-de-solidaritat-del-baix-llobregat/",
-    "logo": "../assets/logos/comite-de-solidaritat-del-baix-llobregat.png"
+    "id": "alt-emporda-amb-palestina",
+    "name": "Alt Empordà amb Palestina",
+    "url": "https://bsky.app/profile/palestinafigueres.bsky.social",
+    "logo": "../assets/logos/alt-emporda-amb-palestina.jpg"
   },
   {
-    "id": "ateneu-popular-de-gracia",
-    "nom": "Ateneu Popular de Gràcia",
-    "url": "https://example.org/ateneu-popular-de-gracia/",
-    "logo": "../assets/logos/ateneu-popular-de-gracia.png"
+    "id": "assemblea-de-suport-a-palestina-baix-montseny-valles-oriental",
+    "name": "Assemblea de suport a Palestina Baix Montseny - Vallès Oriental",
+    "url": "https://www.instagram.com/suport_palestina_bm_vo/"
   },
   {
-    "id": "xarxa-solidaria-de-ponent",
-    "nom": "Xarxa Solidària de Ponent",
-    "url": "https://example.org/xarxa-solidaria-de-ponent/",
-    "logo": "../assets/logos/xarxa-solidaria-de-ponent.png"
+    "id": "bds-maresme",
+    "name": "BDS Maresme"
   },
   {
-    "id": "collectiu-kufiya-de-girona",
-    "nom": "Col·lectiu Kufiya de Girona",
-    "url": "https://example.org/collectiu-kufiya-de-girona/",
-    "logo": "../assets/logos/collectiu-kufiya-de-girona.png"
+    "id": "cerdanyola-amb-palestina",
+    "name": "Cerdanyola amb Palestina",
+    "url": "https://www.instagram.com/cerdanyolaambpalestina/"
   },
   {
-    "id": "amics-de-gaza-del-valles",
-    "nom": "Amics de Gaza del Vallès",
-    "url": "https://example.org/amics-de-gaza-del-valles/",
-    "logo": "../assets/logos/amics-de-gaza-del-valles.png"
+    "id": "comite-de-solidaritat-amb-palestina-de-sabadell",
+    "name": "Comitè de Solidaritat amb Palestina de Sabadell"
   },
   {
-    "id": "estudiants-per-palestina-de-lleida",
-    "nom": "Estudiants per Palestina de Lleida",
-    "url": "https://example.org/estudiants-per-palestina-de-lleida/",
-    "logo": "../assets/logos/estudiants-per-palestina-de-lleida.png"
+    "id": "comite-de-solidaritat-de-nou-barris-amb-palestina",
+    "name": "Comitè de Solidaritat de Nou Barris amb Palestina"
   },
   {
-    "id": "sindicat-de-barri-de-la-marina",
-    "nom": "Sindicat de Barri de la Marina",
-    "url": "https://example.org/sindicat-de-barri-de-la-marina/",
-    "logo": "../assets/logos/sindicat-de-barri-de-la-marina.png"
+    "id": "comite-de-solidaritat-de-sants-amb-palestina",
+    "name": "Comitè de Solidaritat de Sants amb Palestina",
+    "url": "https://www.instagram.com/comitepalestina.sants/"
   },
   {
-    "id": "casal-popular-de-castello",
-    "nom": "Casal Popular de Castelló",
-    "url": "https://example.org/casal-popular-de-castello/",
-    "logo": "../assets/logos/casal-popular-de-castello.png"
+    "id": "free-palestina-sant-andreu",
+    "name": "Free Palestina Sant Andreu (Harmonia i Iaioflautas)"
   },
   {
-    "id": "plataforma-palestina-lliure-de-mallorca",
-    "nom": "Plataforma Palestina Lliure de Mallorca",
-    "url": "https://example.org/plataforma-palestina-lliure-de-mallorca/",
-    "logo": "../assets/logos/plataforma-palestina-lliure-de-mallorca.png"
+    "id": "la-floresta-contra-fronteres",
+    "name": "La Floresta Contra Fronteres",
+    "url": "https://contrafronteres.lafloresta.info/",
+    "logo": "../assets/logos/la-floresta-contra-fronteres.jpg"
   },
   {
-    "id": "grup-de-solidaritat-d-alcoi",
-    "nom": "Grup de Solidaritat d'Alcoi",
-    "url": "https://example.org/grup-de-solidaritat-d-alcoi/",
-    "logo": "../assets/logos/grup-de-solidaritat-d-alcoi.png"
+    "id": "la-seu-per-palestina",
+    "name": "La Seu per Palestina",
+    "url": "https://www.instagram.com/laseu_perpalestina/"
   },
   {
-    "id": "assemblea-antiimperialista-de-tarragona",
-    "nom": "Assemblea Antiimperialista de Tarragona",
-    "url": "https://example.org/assemblea-antiimperialista-de-tarragona/",
-    "logo": "../assets/logos/assemblea-antiimperialista-de-tarragona.png"
+    "id": "moianes-amb-palestina",
+    "name": "Moianès amb Palestina",
+    "url": "https://www.instagram.com/moianesambpalestina/"
   },
   {
-    "id": "collectiu-olivera-de-reus",
-    "nom": "Col·lectiu Olivera de Reus",
-    "url": "https://example.org/collectiu-olivera-de-reus/",
-    "logo": "../assets/logos/collectiu-olivera-de-reus.png"
+    "id": "moviment-solidari-amb-palestina-de-gramenet",
+    "name": "Moviment Solidari amb Palestina de Gramenet"
   },
   {
-    "id": "comite-palestina-del-maresme",
-    "nom": "Comitè Palestina del Maresme",
-    "url": "https://example.org/comite-palestina-del-maresme/",
-    "logo": "../assets/logos/comite-palestina-del-maresme.png"
+    "id": "penedes-amb-palestina",
+    "name": "Penedès amb Palestina",
+    "url": "https://www.instagram.com/penedesambpalestina/"
   },
   {
-    "id": "joves-per-palestina-de-l-horta",
-    "nom": "Joves per Palestina de l'Horta",
-    "url": "https://example.org/joves-per-palestina-de-l-horta/",
-    "logo": "../assets/logos/joves-per-palestina-de-l-horta.png"
+    "id": "pla-de-l-estany-amb-palestina",
+    "name": "Pla de l'Estany amb Palestina",
+    "url": "https://www.instagram.com/pladelestanyambpalestina/"
   },
   {
-    "id": "espai-solidari-de-la-cerdanya",
-    "nom": "Espai Solidari de la Cerdanya",
-    "url": "https://example.org/espai-solidari-de-la-cerdanya/",
-    "logo": "../assets/logos/espai-solidari-de-la-cerdanya.png"
+    "id": "ras-al-hanout",
+    "name": "Ras Al Hanout"
   },
   {
-    "id": "ateneu-del-camp-de-morvedre",
-    "nom": "Ateneu del Camp de Morvedre",
-    "url": "https://example.org/ateneu-del-camp-de-morvedre/",
-    "logo": "../assets/logos/ateneu-del-camp-de-morvedre.png"
+    "id": "sant-cugat-amb-palestina",
+    "name": "Sant Cugat amb Palestina"
   },
   {
-    "id": "xarxa-d-entitats-de-perpinya",
-    "nom": "Xarxa d'Entitats de Perpinyà",
-    "url": "https://example.org/xarxa-d-entitats-de-perpinya/",
-    "logo": "../assets/logos/xarxa-d-entitats-de-perpinya.png"
+    "id": "solsones-amb-palestina",
+    "name": "Solsonès amb Palestina"
   },
   {
-    "id": "assemblea-de-dones-per-palestina-d-elx",
-    "nom": "Assemblea de Dones per Palestina d'Elx",
-    "url": "https://example.org/assemblea-de-dones-per-palestina-d-elx/",
-    "logo": "../assets/logos/assemblea-de-dones-per-palestina-d-elx.png"
+    "id": "terrassa-amb-palestina",
+    "name": "Terrassa amb Palestina",
+    "url": "https://www.instagram.com/terrassaambpalestina/"
   },
   {
-    "id": "collectiu-tatreez-de-terrassa",
-    "nom": "Col·lectiu Tatreez de Terrassa",
-    "url": "https://example.org/collectiu-tatreez-de-terrassa/",
-    "logo": "../assets/logos/collectiu-tatreez-de-terrassa.png"
+    "id": "boicot-icl",
+    "name": "Boicot ICL",
+    "url": "https://boicoticl.org/",
+    "logo": "../assets/logos/boicot-icl.png"
+  },
+  {
+    "id": "coalicio-prou-complicitat-amb-israel",
+    "name": "Coalició Prou Complicitat amb Israel",
+    "url": "https://proucomplicitat.cat/",
+    "logo": "../assets/logos/coalicio-prou-complicitat-amb-israel.jpg"
+  },
+  {
+    "id": "global-sumud-flotilla",
+    "name": "Global Sumud Flotilla",
+    "url": "https://globalsumudflotilla.org/",
+    "logo": "../assets/logos/global-sumud-flotilla.png"
+  },
+  {
+    "id": "ism-catalunya",
+    "name": "ISM Catalunya"
   }
 ]

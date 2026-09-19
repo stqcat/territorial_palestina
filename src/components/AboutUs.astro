@@ -2,10 +2,10 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
-const organitzacions = await getCollection('organitzacions');
+const organizations = await getCollection('organizations');
 ---
 
-<section class="capcalera-pagina">
+<section class="page-header">
 	<h1>Qui som</h1>
 	<p class="lead">
 		Territoris Catalans amb Palestina coordina entitats de solidaritat de tot el
@@ -19,24 +19,46 @@ const organitzacions = await getCollection('organitzacions');
 	</p>
 </section>
 
-<section class="entitats">
+<section class="entities">
 	<h2>Entitats que hi participen</h2>
-	<ul class="entitats__llista">
-		{organitzacions.map((org) => (
-			<li class="entitat">
-				<a href={org.data.url} rel="noopener">
-					{org.data.logo ? (
-						<Image
-							src={org.data.logo}
-							alt={org.data.nom}
-							widths={[200, 400]}
-							sizes="200px"
-						/>
-					) : (
-						<span class="entitat__nom">{org.data.nom}</span>
-					)}
-				</a>
-			</li>
-		))}
+	<ul class="entities__list">
+		{organizations.map((org) => {
+			const Box = org.data.url ? 'a' : 'div';
+			const link = org.data.url
+				? { href: org.data.url, target: '_blank', rel: 'noopener' }
+				: {};
+
+			return (
+				<li class="entity">
+					<Box class="entity__box" {...link}>
+						{org.data.logo && (
+							<Image
+								class="entity__logo"
+								src={org.data.logo}
+								alt=""
+								widths={[200, 400]}
+								sizes="200px"
+							/>
+						)}
+						<span class="entity__name">
+							{org.data.name}
+							{org.data.url && (
+								<svg
+									class="entity__external"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2.5"
+									aria-hidden="true"
+								>
+									<path d="M7 17 17 7" />
+									<path d="M9 7h8v8" />
+								</svg>
+							)}
+						</span>
+					</Box>
+				</li>
+			);
+		})}
 	</ul>
 </section>

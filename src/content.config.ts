@@ -1,28 +1,28 @@
 import { defineCollection, z } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 
-const marques = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/marques' }),
+const brands = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/brands' }),
 	schema: z.object({
-		nom: z.string(),
-		ordre: z.number(),
+		name: z.string(),
+		order: z.number(),
 		sector: z.string(),
-		resum: z.string(),
+		summary: z.string(),
 		alternatives: z.array(z.string()).default([]),
-		fonts: z
-			.array(z.object({ titol: z.string(), url: z.string().url() }))
+		sources: z
+			.array(z.object({ title: z.string(), url: z.string().url() }))
 			.default([]),
 	}),
 });
 
-const organitzacions = defineCollection({
-	loader: file('./src/content/organitzacions.json'),
+const organizations = defineCollection({
+	loader: file('./src/content/organizations.json'),
 	schema: ({ image }) =>
 		z.object({
-			nom: z.string(),
-			url: z.string().url(),
+			name: z.string(),
+			url: z.string().url().optional(),
 			logo: image().optional(),
 		}),
 });
 
-export const collections = { marques, organitzacions };
+export const collections = { brands, organizations };

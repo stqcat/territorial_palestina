@@ -1,21 +1,21 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
-import cartell from '../assets/cartell-boicot.jpg';
+import poster from '../assets/boycott-poster.jpg';
 
-const marques = (await getCollection('marques')).sort(
-	(a, b) => a.data.ordre - b.data.ordre,
+const brands = (await getCollection('brands')).sort(
+	(a, b) => a.data.order - b.data.order,
 );
 
-const continguts = await Promise.all(
-	marques.map(async (marca) => ({
-		marca,
-		Content: (await render(marca)).Content,
+const entries = await Promise.all(
+	brands.map(async (brand) => ({
+		brand,
+		Content: (await render(brand)).Content,
 	})),
 );
 ---
 
-<section class="capcalera-pagina">
+<section class="page-header">
 	<h1>Com fer el boicot</h1>
 	<p class="lead">
 		El boicot funciona quan es manté i quan s'explica. Aquestes tres empreses
@@ -23,9 +23,9 @@ const continguts = await Promise.all(
 	</p>
 </section>
 
-<figure class="cartell cartell--campanya">
+<figure class="poster poster--campaign">
 	<Image
-		src={cartell}
+		src={poster}
 		alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
 		widths={[400, 800, 1200]}
 		sizes="(max-width: 48rem) 90vw, 30rem"
@@ -33,39 +33,39 @@ const continguts = await Promise.all(
 	<figcaption>Descarrega el cartell i penja'l al teu barri o poble.</figcaption>
 </figure>
 
-<div class="marques">
-	{continguts.map(({ marca, Content }) => (
-		<article class="marca" id={marca.id}>
-			<header class="marca__cap">
-				<h2 class="marca__nom">{marca.data.nom}</h2>
-				<p class="marca__sector">{marca.data.sector}</p>
+<div class="brands">
+	{entries.map(({ brand, Content }) => (
+		<article class="brand" id={brand.id}>
+			<header class="brand__head">
+				<h2 class="brand__name">{brand.data.name}</h2>
+				<p class="brand__sector">{brand.data.sector}</p>
 			</header>
 
-			<p class="marca__resum">{marca.data.resum}</p>
+			<p class="brand__summary">{brand.data.summary}</p>
 
-			<div class="marca__cos">
+			<div class="brand__body">
 				<Content />
 			</div>
 
-			{marca.data.alternatives.length > 0 && (
-				<div class="marca__alternatives">
+			{brand.data.alternatives.length > 0 && (
+				<div class="brand__alternatives">
 					<h3>Què pots fer</h3>
 					<ul>
-						{marca.data.alternatives.map((alt) => (
+						{brand.data.alternatives.map((alt) => (
 							<li>{alt}</li>
 						))}
 					</ul>
 				</div>
 			)}
 
-			{marca.data.fonts.length > 0 && (
-				<div class="marca__fonts">
+			{brand.data.sources.length > 0 && (
+				<div class="brand__sources">
 					<h3>Fonts</h3>
 					<ul>
-						{marca.data.fonts.map((font) => (
+						{brand.data.sources.map((source) => (
 							<li>
-								<a href={font.url} rel="noopener">
-									{font.titol}
+								<a href={source.url} rel="noopener">
+									{source.title}
 								</a>
 							</li>
 						))}

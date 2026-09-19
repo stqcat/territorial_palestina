@@ -4,21 +4,26 @@ import '@fontsource/barlow/latin-600';
 import '@fontsource/barlow-condensed/latin-600';
 import '@fontsource/barlow-condensed/latin-700';
 import '../styles/base.css';
-import '../styles/etiqueta.css';
+import '../styles/label.css';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
+import poster from '../assets/boycott-poster.jpg';
 
 interface Props {
 	title: string;
-	descripcio?: string;
-	pagina: string;
+	description?: string;
+	page: string;
 }
 
-const { title, descripcio, pagina } = Astro.props;
+const { title, description, page } = Astro.props;
+
+// Absolute URLs: canonical links and social cards can't use relative paths.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(poster.src, Astro.site);
 
 const menu = [
-	{ href: '/boicot/', text: 'Boicot', id: 'boicot' },
-	{ href: '/qui-som/', text: 'Qui som', id: 'qui-som' },
+	{ href: '/boicot/', text: 'Boicot', id: 'boycott' },
+	{ href: '/qui-som/', text: 'Qui som', id: 'about-us' },
 	{ href: '/manifest/', text: 'Manifest', id: 'manifest' },
 ];
 ---
@@ -30,16 +35,32 @@ const menu = [
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		{descripcio && <meta name="description" content={descripcio} />}
+		{description && <meta name="description" content={description} />}
+		<link rel="canonical" href={canonical} />
 		<title>{title}</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Territoris Catalans amb Palestina" />
+		<meta property="og:locale" content="ca_ES" />
+		<meta property="og:title" content={title} />
+		{description && <meta property="og:description" content={description} />}
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={socialImage} />
+		<meta property="og:image:width" content={String(poster.width)} />
+		<meta property="og:image:height" content={String(poster.height)} />
+		<meta
+			property="og:image:alt"
+			content="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
+		/>
+		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body>
-		<div class="lloc">
-			<header class="capcalera">
+		<div class="site">
+			<header class="header">
 				<a
-					class="capcalera__logo"
+					class="header__logo"
 					href="/"
-					aria-current={pagina === 'portada' ? 'page' : undefined}
+					aria-current={page === 'home' ? 'page' : undefined}
 				>
 					<Image
 						src={logo}
@@ -55,7 +76,7 @@ const menu = [
 							<li>
 								<a
 									href={m.href}
-									aria-current={m.id === pagina ? 'page' : undefined}
+									aria-current={m.id === page ? 'page' : undefined}
 								>
 									{m.text}
 								</a>
@@ -65,14 +86,15 @@ const menu = [
 				</nav>
 			</header>
 
-			<main class="contingut">
+			<main class="content">
 				<slot />
 			</main>
 
-			<footer class="peu">
-				<p class="peu__nom">Territoris Catalans amb Palestina</p>
-				<p class="peu__nota">
-					Coordinadora d'entitats de solidaritat dels Països Catalans
+			<footer class="footer">
+				<p class="footer__name">Territoris Catalans amb Palestina</p>
+				<p class="footer__note">
+					Coordinadora d'entitats de solidaritat amb Palestina dels Països
+					Catalans
 				</p>
 			</footer>
 		</div>

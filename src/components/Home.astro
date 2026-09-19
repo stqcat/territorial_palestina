@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import cartell from '../assets/cartell-boicot.jpg';
+import poster from '../assets/boycott-poster.jpg';
 
 interface Props {
 	base: string;
@@ -9,33 +9,33 @@ interface Props {
 
 const { base } = Astro.props;
 
-const marques = (await getCollection('marques')).sort(
-	(a, b) => a.data.ordre - b.data.ordre,
+const brands = (await getCollection('brands')).sort(
+	(a, b) => a.data.order - b.data.order,
 );
-const organitzacions = await getCollection('organitzacions');
+const organizations = await getCollection('organizations');
 ---
 
 <section class="hero">
 	<div class="hero__text">
-		<h1 class="hero__titol">Boicot a Teva, Carrefour i ICL</h1>
+		<h1 class="hero__title">Boicot a Teva, Carrefour i ICL</h1>
 		<p class="lead">
 			Tres empreses que sostenen l'ocupació i el genocidi a Palestina. Deixar de
 			comprar-hi és una decisió a l'abast de tothom, cada setmana, a la farmàcia
 			i al supermercat.
 		</p>
-		<p class="accions">
-			<a class="accio" href={`${base}boicot/`}>
+		<p class="actions">
+			<a class="action" href={`${base}boicot/`}>
 				Com fer el boicot
 			</a>
-			<a class="accio accio--discreta" href={`${base}qui-som/`}>
+			<a class="action action--quiet" href={`${base}qui-som/`}>
 				Qui som
 			</a>
 		</p>
 	</div>
 
-	<figure class="cartell">
+	<figure class="poster">
 		<Image
-			src={cartell}
+			src={poster}
 			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
 			widths={[400, 800, 1200]}
 			sizes="(max-width: 48rem) 90vw, 36rem"
@@ -43,15 +43,15 @@ const organitzacions = await getCollection('organitzacions');
 	</figure>
 </section>
 
-<section class="empreses">
+<section class="companies">
 	<h2>Les tres empreses</h2>
-	<ul class="empreses__llista">
-		{marques.map((marca) => (
-			<li class="empresa">
-				<h3 class="empresa__nom">{marca.data.nom}</h3>
-				<p class="empresa__sector">{marca.data.sector}</p>
-				<p class="empresa__resum">{marca.data.resum}</p>
-				<a class="empresa__enllac" href={`${base}boicot/#${marca.id}`}>
+	<ul class="companies__list">
+		{brands.map((brand) => (
+			<li class="company">
+				<h3 class="company__name">{brand.data.name}</h3>
+				<p class="company__sector">{brand.data.sector}</p>
+				<p class="company__summary">{brand.data.summary}</p>
+				<a class="company__link" href={`${base}boicot/#${brand.id}`}>
 					Per què la boicotegem
 				</a>
 			</li>
@@ -59,17 +59,17 @@ const organitzacions = await getCollection('organitzacions');
 	</ul>
 </section>
 
-<section class="coordinadora">
+<section class="coalition">
 	<h2>Una coordinadora d'entitats</h2>
 	<p>
 		Som entitats de solidaritat amb Palestina d'arreu dels Països Catalans que
 		coordinem campanyes conjuntes. Aquesta n'és la principal.
 	</p>
-	<p class="xifra">
-		<strong>{organitzacions.length}</strong>
+	<p class="count">
+		<strong>{organizations.length}</strong>
 		<span>entitats hi participen</span>
 	</p>
-	<a class="accio accio--discreta" href={`${base}qui-som/`}>
+	<a class="action action--quiet" href={`${base}qui-som/`}>
 		Veure les entitats
 	</a>
 </section>

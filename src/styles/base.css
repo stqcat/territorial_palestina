@@ -1,4 +1,4 @@
-/* Reinici mínim. Cap decisió estètica aquí: el sistema viu a etiqueta.css. */
+/* Minimal reset. No aesthetic decisions here: the system lives in label.css. */
 *,
 *::before,
 *::after {
@@ -36,9 +36,9 @@ ol {
 	list-style: none;
 }
 
-.marca__cos ul,
-.marca__alternatives ul,
-.marca__fonts ul {
+.brand__body ul,
+.brand__alternatives ul,
+.brand__sources ul {
 	list-style: disc;
 	padding-left: 1.25em;
 }

@@ -1,11 +1,11 @@
 ---
-nom: Teva
-ordre: 1
+name: Teva
+order: 1
 sector: Farmacèutica
-resum: Multinacional farmacèutica israeliana, principal productora mundial de medicaments genèrics.
+summary: Multinacional farmacèutica israeliana, principal productora mundial de medicaments genèrics.
 alternatives:
   - Genèrics d'altres laboratoris, sempre amb consell del metge o farmacèutic
-fonts: []
+sources: []
 ---
 
 Teva Pharmaceutical Industries té la seu a Israel i és una de les empreses

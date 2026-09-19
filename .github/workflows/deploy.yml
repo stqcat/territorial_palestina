@@ -1,8 +1,7 @@
-name: Desplega a GitHub Pages
+name: Deploy to GitHub Pages
 
-# Només manual: el contingut encara és esborrany i no volem que cap push
-# a main torni a publicar el lloc. Per tornar-ho a automatitzar, afegeix
-# dues línies aquí sota:
+# Manual only: the content is still a draft and we don't want a push to main
+# to republish the site. To automate it again, add two lines below:
 #   push:
 #     branches: [main]
 on:
@@ -13,13 +12,13 @@ permissions:
   pages: write
   id-token: write
 
-# Una desplegada a la vegada, sense cancel·lar-ne cap a mitges
+# One deployment at a time, without cancelling any half-way through
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  construeix:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,12 +26,12 @@ jobs:
         with:
           node-version: 22
 
-  desplega:
-    needs: construeix
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.desplegada.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: desplegada
+      - id: deployment
         uses: actions/deploy-pages@v4
