@@ -23,5 +23,8 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# captures i instantànies de verificació amb navegador
+# browser verification screenshots
 .playwright-mcp/
+
+# reference documents kept locally, not part of the site
+/*.pdf

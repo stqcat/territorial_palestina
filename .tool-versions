@@ -1,0 +1,2 @@
+# Matches the Node version the deploy workflow builds with.
+nodejs 22.14.0
