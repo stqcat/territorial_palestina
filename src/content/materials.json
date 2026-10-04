@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cartell-boicot",
+    "name": "Cartell de la campanya de boicot",
+    "kind": "poster",
+    "description": "Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices: Teva, Carrefour i ICL. El cartell de la campanya d'aquest curs, per penjar al barri o al poble.",
+    "file": "/materials/cartell-boicot-a2.pdf",
+    "format": "PDF · A2",
+    "preview": "../assets/boycott-poster.jpg",
+    "order": 1
+  },
+  {
+    "id": "cartell-boicot-airbnb",
+    "name": "Aquest estiu no compris genocidi",
+    "kind": "poster",
+    "description": "Boicot a Airbnb, Booking i Tripadvisor, que ofereixen allotjaments als assentaments il·legals. Al darrere, què és el boicot i per què aquestes tres plataformes.",
+    "file": "/materials/cartell-boicot-airbnb-a3.pdf",
+    "format": "PDF · A3, dues cares",
+    "preview": "../assets/materials/cartell-boicot-airbnb.png",
+    "order": 2
+  },
+  {
+    "id": "full-de-ma-el-boicot-funciona",
+    "name": "El boicot funciona",
+    "kind": "leaflet",
+    "description": "Full de mà amb l'explicació del boicot i les empreses còmplices, una per una. Dos fulls per cada A4, imprès a doble cara.",
+    "file": "/materials/full-de-ma-el-boicot-funciona-a4.pdf",
+    "format": "PDF · A4, dues cares",
+    "preview": "../assets/materials/full-de-ma-el-boicot-funciona.png",
+    "order": 3
+  },
+  {
+    "id": "adhesius-zionists-not-welcome",
+    "name": "Zionists not welcome",
+    "kind": "stickers",
+    "description": "Full de setze adhesius per imprimir en paper adhesiu i retallar.",
+    "file": "/materials/adhesius-zionists-not-welcome-a4.pdf",
+    "format": "PDF · A4, 16 adhesius",
+    "preview": "../assets/materials/adhesius-zionists-not-welcome.png",
+    "order": 4
+  },
+  {
+    "id": "adhesius-carrefour-genocide",
+    "name": "Carrefour Genocide",
+    "kind": "stickers",
+    "description": "Full de cinc adhesius amb el logotip de Carrefour per enganxar on calgui.",
+    "file": "/materials/adhesius-carrefour-genocide-a4.pdf",
+    "format": "PDF · A4, 5 adhesius",
+    "preview": "../assets/materials/adhesius-carrefour-genocide.png",
+    "order": 5
+  }
+]

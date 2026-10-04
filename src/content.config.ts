@@ -25,4 +25,20 @@ const organizations = defineCollection({
 		}),
 });
 
-export const collections = { brands, organizations };
+const materials = defineCollection({
+	loader: file('./src/content/materials.json'),
+	schema: ({ image }) =>
+		z.object({
+			name: z.string(),
+			kind: z.enum(['poster', 'leaflet', 'stickers', 'banner']),
+			description: z.string(),
+			// Served as a static file from public/, so the download URL is stable.
+			file: z.string().startsWith('/materials/'),
+			// Shown next to the download link, e.g. "PDF · A2".
+			format: z.string(),
+			preview: image(),
+			order: z.number(),
+		}),
+});
+
+export const collections = { brands, organizations, materials };

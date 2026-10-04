@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content';
 import poster from '../assets/boycott-poster.jpg';
 
 // Print-ready A2 version, served as a static file from public/.
-const posterPdf = '/cartell-boicot-a2.pdf';
+const posterPdf = '/materials/cartell-boicot-a2.pdf';
 
 const brands = (await getCollection('brands')).sort(
 	(a, b) => a.data.order - b.data.order,

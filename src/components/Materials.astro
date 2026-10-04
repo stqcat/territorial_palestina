@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const materials = (await getCollection('materials')).sort(
+	(a, b) => a.data.order - b.data.order,
+);
+
+const kinds = {
+	poster: 'Cartell',
+	leaflet: 'Full de mà',
+	stickers: 'Adhesius',
+	banner: 'Pancarta',
+};
+
+const fileName = (path: string) => path.split('/').pop();
+---
+
+<section class="page-header">
+	<h1>Materials</h1>
+	<p class="lead">
+		Cartells, fulls de mà i adhesius de la campanya, a punt per imprimir.
+		Descarrega'ls, fes-ne còpies i reparteix-los al teu barri o poble.
+	</p>
+</section>
+
+<ul class="materials">
+	{materials.map((material) => (
+		<li class="material" id={material.id}>
+			<a
+				class="material__preview"
+				href={material.data.file}
+				download={fileName(material.data.file)}
+			>
+				<Image
+					src={material.data.preview}
+					alt=""
+					widths={[400, 800]}
+					sizes="(max-width: 30rem) 90vw, 20rem"
+				/>
+			</a>
+			<p class="material__kind">{kinds[material.data.kind]}</p>
+			<h2 class="material__name">{material.data.name}</h2>
+			<p class="material__description">{material.data.description}</p>
+			<a
+				class="material__download"
+				href={material.data.file}
+				download={fileName(material.data.file)}
+			>
+				Descarrega <span class="material__format">{material.data.format}</span>
+			</a>
+		</li>
+	))}
+</ul>
