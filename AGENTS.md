@@ -10,8 +10,6 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 `.tool-versions` (asdf/mise) pins Node to the version the deploy workflow builds with; bump the file, `package.json`'s `engines` and `.github/workflows/deploy.yml` together.
 
-`CLAUDE.md` is a symlink to `AGENTS.md` — editing either edits both. Don't replace it with a regular file.
-
 ## Language
 
 Everything the visitor reads is in Catalan (`<html lang="ca">`): page copy, UI strings, image alt text and the content collections.
