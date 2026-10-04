@@ -1,0 +1,107 @@
+/* Proposal D — Lletres
+   The logo is taken apart: the wordmark becomes live type and is the
+   home page's own title, the keffiyeh wave is the rule beneath it, and
+   the maps are left out. Everything else follows A. */
+:root {
+	--ink: #000;
+	--paper: #fff;
+	--coral: #e25947;
+	--grey: #5c5c5c;
+	--rule: #000;
+	--title: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+	--text: 'Barlow', system-ui, sans-serif;
+}
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.55 var(--text); }
+.site { max-width: 66rem; margin-inline: auto; padding: 0 1rem 3rem; }
+
+/* Header: menu first, then the name as the page title */
+.header { padding-top: 1.25rem; }
+.menu ul { display: flex; justify-content: end; gap: 2rem; }
+.menu a { font: 700 1.25rem/1 var(--title); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; padding-bottom: 0.35rem; border-bottom: 3px solid transparent; }
+.menu a:hover { border-color: var(--ink); }
+.menu a[aria-current='page'] { border-color: var(--coral); }
+
+/* The wordmark in type: small line, huge line, wave */
+.mark { display: block; margin-top: 1.5rem; font-family: var(--title); text-transform: uppercase; line-height: 0.82; text-decoration: none; color: var(--ink); }
+.mark__top { display: block; font-size: clamp(1.5rem, 5.3vw, 3.75rem); font-weight: 700; letter-spacing: 0.06em; }
+.mark__main { display: block; margin-top: 0.08em; font-size: clamp(5rem, 22.5vw, 16rem); font-weight: 900; letter-spacing: -0.015em; }
+.wave { height: clamp(10px, 2.2vw, 16px); margin-top: 0.75rem; background: url(img/wave1.png) left top / auto 100% repeat-x; }
+
+/* Inner pages: the same mark, small, in the header's left slot */
+.inner-header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; padding-top: 1.25rem; }
+.mark--small { margin: 0; }
+.mark--small .mark__top { font-size: 0.9375rem; letter-spacing: 0.08em; }
+.mark--small .mark__main { font-size: 3rem; }
+.wave--inner { margin-bottom: 2rem; }
+
+h2, h3 { font-family: var(--title); font-weight: 700; line-height: 1; text-transform: uppercase; text-wrap: balance; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: 1.25rem; }
+
+/* Hero: the campaign, under the name */
+.content { padding-top: 2.5rem; }
+.hero { display: grid; gap: 2rem; }
+@media (min-width: 52rem) { .hero { grid-template-columns: 1.25fr 1fr; gap: 3.5rem; align-items: center; } }
+.hero__title { font-size: clamp(2.5rem, 7vw, 4.25rem); font-weight: 800; letter-spacing: -0.015em; margin-bottom: 0; }
+.hero__word { color: var(--coral); font-weight: 900; }
+.lead { max-width: 32rem; margin-top: 1.25rem; font-size: 1.1875rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.action { padding: 0.8rem 1.5rem; background: var(--ink); color: var(--paper); font: 700 1.25rem/1 var(--title); text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none; }
+.action:hover { background: var(--coral); color: var(--ink); }
+.action--quiet { background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 3px var(--ink); }
+.action--quiet:hover { background: var(--ink); color: var(--paper); }
+.poster img { border: 3px solid var(--ink); }
+
+.companies { margin-top: 4rem; }
+.companies__list { display: grid; gap: 2rem 0; }
+@media (min-width: 48rem) {
+	.companies__list { grid-template-columns: repeat(3, 1fr); }
+	.company + .company { border-left: 2px solid var(--rule); padding-left: 1.5rem; }
+	.company { padding-right: 1.5rem; }
+}
+.company { display: flex; flex-direction: column; padding-top: 0.75rem; border-top: 8px solid var(--coral); }
+.company__name { font-size: 2.5rem; }
+.company__sector { font: 600 1rem/1.3 var(--text); color: var(--grey); }
+.company__summary { margin-top: 0.75rem; }
+.company__link { margin-top: auto; padding-top: 1rem; font: 700 1.0625rem/1.2 var(--title); text-transform: uppercase; letter-spacing: 0.03em; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+.company__link:hover { color: var(--coral); }
+
+.coalition { margin-top: 4rem; padding-top: 1.5rem; border-top: 3px solid var(--rule); }
+.coalition__row { display: grid; gap: 1.5rem; align-items: start; }
+@media (min-width: 52rem) { .coalition__row { grid-template-columns: 1fr auto; } }
+.count { display: flex; gap: 1rem; align-items: start; max-width: 38rem; font-size: 1.1875rem; }
+.count strong { font: 800 5rem/0.85 var(--title); color: var(--coral); font-variant-numeric: tabular-nums; }
+
+.review-note { margin: 5rem 0 1.5rem; padding: 0.5rem 0.75rem; background: #eee; color: #444; font: 600 0.8125rem/1 system-ui, sans-serif; border-radius: 4px; }
+.review-note + .inner-header { padding-top: 0; }
+.wave--inner + .review-note { margin-top: 2rem; }
+
+.brand { border: 3px solid var(--ink); }
+.brand__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1rem; padding: 0.75rem 1.25rem; background: var(--ink); color: var(--paper); }
+.brand__name { font-size: clamp(2.25rem, 6vw, 3.25rem); font-weight: 800; margin: 0; }
+.brand__sector { font: 600 1.0625rem/1.3 var(--text); color: var(--coral); }
+.brand__summary { padding: 1.25rem; border-bottom: 2px solid var(--ink); font-size: 1.1875rem; font-weight: 600; }
+.brand__body { padding: 1.25rem; max-width: 38rem; }
+.brand__body p + p { margin-top: 0.875rem; }
+.brand__alternatives, .brand__sources { padding: 0 1.25rem 1.25rem; max-width: 38rem; }
+.brand__alternatives { margin: 0 1.25rem; padding: 1rem 0 1.25rem; border-top: 8px solid var(--coral); }
+.brand__sources { font-size: 0.9375rem; color: var(--grey); }
+.brand h3 { font-size: 1.375rem; margin-bottom: 0.5rem; }
+.brand ul { padding-left: 1.1em; list-style: disc; }
+.brand li + li { margin-top: 0.25rem; }
+.brand__sources a { color: inherit; text-underline-offset: 0.2em; }
+
+.entities { margin-top: 3rem; }
+.entities__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.75rem; }
+.entity { display: flex; }
+.entity__box { display: flex; flex: 1; flex-direction: column; justify-content: end; gap: 0.625rem; min-height: 7.5rem; padding: 0.875rem 1rem; border: 2px solid var(--ink); color: var(--ink); text-decoration: none; }
+a.entity__box { border-bottom-width: 6px; border-bottom-color: var(--coral); }
+a.entity__box:hover { background: var(--ink); color: var(--paper); }
+.entity__logo { max-height: 2.75rem; width: auto; max-width: 100%; margin-bottom: auto; object-fit: contain; object-position: left; }
+.entity__name { font: 700 1rem/1.15 var(--title); text-transform: uppercase; text-wrap: balance; }
+@media (max-width: 30rem) { .entity__box { min-height: 6rem; } }
+
+/* Footer: the mark again, small, with the wave */
+.footer { margin-top: 4rem; font-family: var(--title); text-transform: uppercase; }
+.footer .wave { margin: 0 0 1rem; }
+.footer__name { font-size: 1.25rem; font-weight: 700; }
+.footer__note { color: var(--grey); font-size: 1rem; font-weight: 500; }
