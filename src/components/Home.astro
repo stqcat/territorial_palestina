@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import poster from '../assets/boycott-poster.jpg';
 
 interface Props {
 	base: string;
@@ -14,34 +12,6 @@ const brands = (await getCollection('brands')).sort(
 );
 const organizations = await getCollection('organizations');
 ---
-
-<section class="hero">
-	<div class="hero__text">
-		<h1 class="hero__title">Boicot a Teva, Carrefour i ICL</h1>
-		<p class="lead">
-			Tres empreses que sostenen l'ocupació i el genocidi a Palestina. Deixar de
-			comprar-hi és una decisió a l'abast de tothom, cada setmana, a la farmàcia
-			i al supermercat.
-		</p>
-		<p class="actions">
-			<a class="action" href={`${base}boicot/`}>
-				Com fer el boicot
-			</a>
-			<a class="action action--quiet" href={`${base}qui-som/`}>
-				Qui som
-			</a>
-		</p>
-	</div>
-
-	<figure class="poster">
-		<Image
-			src={poster}
-			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices. Teva, Carrefour i ICL. Palestina lliure"
-			widths={[400, 800, 1200]}
-			sizes="(max-width: 48rem) 90vw, 36rem"
-		/>
-	</figure>
-</section>
 
 <section class="companies">
 	<h2>Les tres empreses</h2>
@@ -61,15 +31,17 @@ const organizations = await getCollection('organizations');
 
 <section class="coalition">
 	<h2>Una coordinadora d'entitats</h2>
-	<p>
-		Som entitats de solidaritat amb Palestina d'arreu dels Països Catalans que
-		coordinem campanyes conjuntes. Aquesta n'és la principal.
-	</p>
-	<p class="count">
-		<strong>{organizations.length}</strong>
-		<span>entitats hi participen</span>
-	</p>
-	<a class="action action--quiet" href={`${base}qui-som/`}>
-		Totes les entitats
-	</a>
+	<div class="coalition__row">
+		<p class="count">
+			<strong>{organizations.length}</strong>
+			<span>entitats</span>
+		</p>
+		<p class="coalition__text">
+			Som entitats de solidaritat amb Palestina d'arreu dels Països Catalans que
+			coordinem campanyes conjuntes. Aquesta n'és la principal.
+		</p>
+		<a class="action" href={`${base}qui-som/`}>
+			Totes les entitats
+		</a>
+	</div>
 </section>

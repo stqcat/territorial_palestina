@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
 import Home from '../components/Home.astro';
 ---
 
@@ -8,5 +9,6 @@ import Home from '../components/Home.astro';
 	description="Coordinadora d'entitats de solidaritat amb Palestina dels Països Catalans. Campanya de boicot a Teva, Carrefour i ICL."
 	page="home"
 >
+	<Hero slot="hero" base="/" />
 	<Home base="/" />
 </Base>

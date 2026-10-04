@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import glyphP from '../assets/glyph-p.png';
+import glyphI from '../assets/glyph-i.png';
+
+// The logo taken apart: the name set in type, three lines of one width,
+// with the two drawn letters kept from the logo (the P holds the map of
+// the Catalan Countries, the I is the silhouette of Palestine).
+interface Props {
+	/** `home` renders the h1 of the front page; `link` a small mark linking home. */
+	as: 'home' | 'link';
+}
+
+const { as } = Astro.props;
+const Tag = as === 'home' ? 'h1' : 'a';
+const attrs = as === 'home' ? {} : { href: '/' };
+---
+
+<Tag class:list={['mark', { 'mark--small': as === 'link' }]} {...attrs}>
+	<span class="mark__line mark__line--1">Territoris</span>
+	<span class="mark__line mark__line--2">catalans amb</span>
+	<span class="mark__line mark__line--3">
+		<Image class="mark__p" src={glyphP} alt="P" />
+		alest
+		<Image class="mark__i" src={glyphI} alt="I" />
+		na
+	</span>
+</Tag>

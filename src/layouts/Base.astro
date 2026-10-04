@@ -1,12 +1,13 @@
 ---
 import '@fontsource/barlow/latin-400';
 import '@fontsource/barlow/latin-600';
-import '@fontsource/barlow-condensed/latin-600';
+import '@fontsource/barlow/latin-700';
 import '@fontsource/barlow-condensed/latin-700';
+import '@fontsource/barlow-condensed/latin-800';
+import '@fontsource/barlow-condensed/latin-900';
 import '../styles/base.css';
 import '../styles/label.css';
-import { Image } from 'astro:assets';
-import logo from '../assets/logo.png';
+import Wordmark from '../components/Wordmark.astro';
 import poster from '../assets/boycott-poster.jpg';
 
 interface Props {
@@ -56,37 +57,33 @@ const menu = [
 		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body>
+		<div class="band">
+			<div class="site">
+				<header class:list={['header', { 'header--home': page === 'home' }]}>
+					<nav class="menu" aria-label="Seccions">
+						<ul>
+							{menu.map((m) => (
+								<li>
+									<a
+										href={m.href}
+										aria-current={m.id === page ? 'page' : undefined}
+									>
+										{m.text}
+									</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+					<Wordmark as={page === 'home' ? 'home' : 'link'} />
+					{page === 'home' && <div class="wave" role="presentation" />}
+				</header>
+
+				<slot name="hero" />
+			</div>
+		</div>
+		{page !== 'home' && <div class="wave wave--edge" role="presentation" />}
+
 		<div class="site">
-			<header class="header">
-				<a
-					class="header__logo"
-					href="/"
-					aria-current={page === 'home' ? 'page' : undefined}
-				>
-					<Image
-						src={logo}
-						alt="Territoris Catalans amb Palestina"
-						widths={[360, 720]}
-						sizes="(max-width: 48rem) 75vw, 23rem"
-					/>
-				</a>
-
-				<nav class="menu" aria-label="Seccions">
-					<ul>
-						{menu.map((m) => (
-							<li>
-								<a
-									href={m.href}
-									aria-current={m.id === page ? 'page' : undefined}
-								>
-									{m.text}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
-			</header>
-
 			<main class="content">
 				<slot />
 			</main>
@@ -98,6 +95,13 @@ const menu = [
 					Catalans
 				</p>
 			</footer>
+		</div>
+
+		<div class="wave wave--edge wave--edge-up" role="presentation"></div>
+		<div class="band band--foot">
+			<div class="site">
+				<p class="band__motto">Palestina lliure</p>
+			</div>
 		</div>
 	</body>
 </html>

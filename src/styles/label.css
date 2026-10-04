@@ -1,14 +1,17 @@
-/* Option 3 — Label
-   The boycott is decided in the supermarket aisle and at the pharmacy
-   counter, so the system borrows the language of the shelf: shelf labels,
-   barcode strips, tabular figures and plenty of contrast. */
+/* Lletres
+   The logo taken apart. The name is set in type on a black band, the way
+   the campaign poster stacks its title, with the keffiyeh wave from the
+   logo as its underline; two letters are kept from the logo's drawing.
+   The poster leads the front page and hangs over the band's edge.
+   Black, white and the poster's coral carry the design; yellow is one
+   sticker. */
 
 :root {
 	--ink: #000;
 	--paper: #fff;
 	--coral: #e25947;
 	--yellow: #f5c400;
-	--grey: #6b6b6b;
+	--grey: #5c5c5c;
 	--border: #000;
 	--title: 'Barlow Condensed', 'Arial Narrow', sans-serif;
 	--text: 'Barlow', system-ui, sans-serif;
@@ -25,70 +28,7 @@ body {
 .site {
 	max-width: 66rem;
 	margin-inline: auto;
-	padding: 0 1rem 4rem;
-}
-
-/* Barcode strip, the house separator */
-.header {
-	padding: 2rem 0 0;
-}
-
-.header::after {
-	content: '';
-	display: block;
-	height: 22px;
-	margin-top: 1.25rem;
-	background-image: repeating-linear-gradient(
-		90deg,
-		var(--ink) 0 3px,
-		transparent 3px 6px,
-		var(--ink) 6px 8px,
-		transparent 8px 14px,
-		var(--ink) 14px 15px,
-		transparent 15px 19px
-	);
-}
-
-/* Centred logo with the menu centred below, so the header leaves no half-width gap */
-.header__logo {
-	display: block;
-}
-
-.header__logo img {
-	width: min(19rem, 62vw);
-	margin-inline: auto;
-}
-
-.menu ul {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.75rem 5.375rem;
-	margin-top: 1.5rem;
-}
-
-/* No boxes: the links are shelf signage, not buttons */
-.menu a {
-	display: block;
-	font-family: var(--title);
-	font-size: 1.375rem;
-	font-weight: 700;
-	letter-spacing: 0.075em;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-
-.menu a:hover {
-	background: var(--yellow);
-	box-shadow: 0 0 0 0.25rem var(--yellow);
-}
-
-.menu a[aria-current='page'] {
-	box-shadow: inset 0 -0.2em var(--coral);
-}
-
-.content {
-	padding-top: 2.5rem;
+	padding: 0 1rem;
 }
 
 h1,
@@ -96,39 +36,191 @@ h2,
 h3 {
 	font-family: var(--title);
 	font-weight: 700;
-	line-height: 1.02;
+	line-height: 1;
 	text-transform: uppercase;
 	text-wrap: balance;
 }
 
-/* Home page: the headline inside a shelf label */
+h2 {
+	font-size: clamp(1.75rem, 4vw, 2.25rem);
+	margin-bottom: 1.25rem;
+}
+
+/* The band: header and, on the front page, the hero */
+.band {
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	justify-content: space-between;
+	gap: 1rem 2rem;
+	padding-top: 1.25rem;
+}
+
+/* Inner pages: the small mark sits left of the menu */
+.header .mark--small {
+	order: -1;
+}
+
+/* Front page: the menu goes first and the name is the page title */
+.header--home {
+	display: block;
+}
+
+.header--home .menu ul {
+	justify-content: end;
+}
+
+.header .wave {
+	flex-basis: 100%;
+}
+
+.menu ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 2rem;
+}
+
+.menu a {
+	display: block;
+	padding-bottom: 0.35rem;
+	border-bottom: 3px solid transparent;
+	font-family: var(--title);
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	border-color: var(--paper);
+}
+
+.menu a[aria-current='page'] {
+	border-color: var(--coral);
+}
+
+/* The wordmark: three lines of one width. The em sizes are tuned so the
+   lines end flush; the drawn P and I overshoot a little, as in the logo. */
+.mark {
+	display: block;
+	width: fit-content;
+	margin-top: 1.5rem;
+	color: var(--paper);
+	font-family: var(--title);
+	font-size: clamp(3.4rem, 14vw, 7.6rem);
+	font-weight: 900;
+	line-height: 0.84;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.mark__line {
+	display: block;
+	letter-spacing: 0.01em;
+}
+
+.mark__line--2 {
+	font-size: 0.735em;
+	letter-spacing: 0.035em;
+}
+
+.mark__line--3 {
+	font-size: 1.01em;
+}
+
+.mark__p,
+.mark__i {
+	display: inline-block;
+	width: auto;
+	vertical-align: baseline;
+}
+
+.mark__p {
+	height: 0.715em;
+	margin-right: 0.015em;
+}
+
+.mark__i {
+	height: 0.85em;
+	margin: 0 0.01em;
+	vertical-align: -0.075em;
+}
+
+.mark--small {
+	margin: 0;
+	font-size: 1.55rem;
+	line-height: 0.86;
+}
+
+.wave {
+	height: 12px;
+	margin-top: 1rem;
+	background: url(../assets/wave-white.png) left top / auto 100% repeat-x;
+}
+
+.header--home .wave {
+	margin-top: 0.75rem;
+}
+
+/* On inner pages the wave is the band's own edge: black teeth on the
+   white body below the header, and the mirror image above the footer */
+.wave--edge {
+	margin: 0;
+	background-image: url(../assets/wave-edge.png);
+	background-position: center top;
+}
+
+.wave--edge-up {
+	transform: scaleY(-1);
+}
+
+.header:not(.header--home) {
+	padding-bottom: 1.25rem;
+}
+
+/* Hero, inside the band: the campaign under the name, the poster beside */
 .hero {
 	display: grid;
 	gap: 2rem;
+	padding-top: 2rem;
 }
 
 @media (min-width: 52rem) {
 	.hero {
 		grid-template-columns: 1.3fr 1fr;
-		gap: 3rem;
-		align-items: start;
+		gap: 3.5rem;
+		align-items: end;
 	}
 }
 
-.hero__text {
-	border: 3px solid var(--border);
-	padding: 1.5rem;
-}
-
 .hero__title {
-	font-size: clamp(2.75rem, 8vw, 4.75rem);
+	margin-bottom: 0;
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
+	font-weight: 800;
 	letter-spacing: -0.01em;
 }
 
+.hero__word {
+	color: var(--coral);
+	font-weight: 900;
+}
+
 .lead {
-	max-width: 36rem;
+	max-width: 32rem;
 	margin-top: 1rem;
-	font-size: 1.125rem;
+	font-size: 1.1875rem;
+}
+
+.page-header h1 {
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
+	font-weight: 800;
+	letter-spacing: -0.01em;
 }
 
 .page-header p + p {
@@ -140,23 +232,28 @@ h3 {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.75rem;
-	margin-top: 1.5rem;
+	margin: 1.75rem 0 0;
+}
+
+.hero .actions {
+	margin-bottom: 3rem;
 }
 
 .action {
-	padding: 0.75rem 1.5rem;
-	background: var(--coral);
-	color: var(--ink);
+	padding: 0.8rem 1.5rem;
+	background: var(--ink);
+	color: var(--paper);
 	font-family: var(--title);
 	font-size: 1.25rem;
 	font-weight: 700;
+	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
 .action:hover {
-	background: var(--ink);
-	color: var(--paper);
+	background: var(--coral);
+	color: var(--ink);
 }
 
 .action--quiet {
@@ -166,12 +263,50 @@ h3 {
 }
 
 .action--quiet:hover {
-	background: var(--yellow);
+	background: var(--ink);
+	color: var(--paper);
+}
+
+/* On the band the colours swap */
+.band .action {
+	background: var(--coral);
 	color: var(--ink);
 }
 
+.band .action:hover {
+	background: var(--paper);
+}
+
+.band .action--quiet {
+	background: transparent;
+	color: var(--paper);
+	box-shadow: inset 0 0 0 3px var(--paper);
+}
+
+.band .action--quiet:hover {
+	background: var(--paper);
+	color: var(--ink);
+}
+
+/* Posters */
 .poster img {
 	border: 3px solid var(--border);
+}
+
+/* The front-page poster hangs below the band */
+.poster--hero {
+	margin-bottom: -4rem;
+}
+
+.poster--hero img {
+	box-shadow: 0 0 0 3px var(--paper);
+}
+
+@media (max-width: 51.99rem) {
+	.poster--hero {
+		max-width: 26rem;
+		margin: 0 auto -3rem;
+	}
 }
 
 .poster figcaption {
@@ -195,22 +330,17 @@ h3 {
 	margin: 2rem 0;
 }
 
-.companies,
-.coalition,
-.entities {
-	margin-top: 3.5rem;
+/* Page body */
+.content {
+	padding-top: 2.5rem;
 }
 
-.companies h2,
-.coalition h2,
-.entities h2 {
-	font-size: clamp(1.75rem, 4vw, 2.25rem);
-	margin-bottom: 1.25rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 3px solid var(--border);
+/* The front page's body starts below the overhanging poster */
+.companies:first-child {
+	padding-top: 3.5rem;
 }
 
-/* Cards as shelf labels, with the price strip on the left */
+/* Companies: three cards with the coral top bar */
 .companies__list {
 	display: grid;
 	gap: 1rem;
@@ -225,20 +355,21 @@ h3 {
 .company {
 	display: flex;
 	flex-direction: column;
-	padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+	padding: 1rem 1.25rem 1.25rem;
 	border: 2px solid var(--border);
-	border-left: 12px solid var(--coral);
+	border-top: 10px solid var(--coral);
 }
 
 .company__name {
-	font-size: 2rem;
+	font-size: 2.5rem;
+	font-weight: 800;
 }
 
 .company__sector {
-	font-family: var(--title);
-	font-size: 1rem;
-	text-transform: uppercase;
 	color: var(--grey);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.3;
 }
 
 .company__summary {
@@ -251,41 +382,71 @@ h3 {
 	padding-top: 1rem;
 	font-family: var(--title);
 	font-size: 1.0625rem;
-	font-weight: 600;
+	font-weight: 700;
+	letter-spacing: 0.03em;
 	text-transform: uppercase;
+	text-decoration-thickness: 2px;
 	text-underline-offset: 0.2em;
 }
 
-.count {
-	display: flex;
+.company__link:hover {
+	color: var(--coral);
+}
+
+/* Coalition: the count is the one sticker */
+.coalition,
+.entities {
+	margin-top: 4rem;
+}
+
+.coalition {
+	padding-top: 1.5rem;
+	border-top: 3px solid var(--border);
+}
+
+.coalition__row {
+	display: grid;
+	gap: 1.5rem;
 	align-items: center;
-	gap: 1rem;
-	margin: 1.25rem 0;
-	padding: 0.75rem 1rem;
+	justify-items: start;
+}
+
+@media (min-width: 52rem) {
+	.coalition__row {
+		grid-template-columns: auto 1fr auto;
+	}
+}
+
+.coalition__text {
+	max-width: 34rem;
+	font-size: 1.125rem;
+}
+
+.count {
+	display: grid;
+	place-items: center;
+	width: 9rem;
+	aspect-ratio: 1;
+	padding: 0.75rem;
 	background: var(--yellow);
-	border: 2px solid var(--border);
-	width: fit-content;
-}
-
-.count strong {
+	border-radius: 50%;
+	transform: rotate(-6deg);
 	font-family: var(--title);
-	font-size: 3.25rem;
-	line-height: 1;
-	font-variant-numeric: tabular-nums;
-}
-
-.count span {
-	font-family: var(--title);
-	font-size: 1.25rem;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.05;
+	text-align: center;
 	text-transform: uppercase;
 }
 
-.coalition p,
-.brand__body {
-	max-width: 38rem;
+.count strong {
+	font-size: 3.5rem;
+	font-weight: 900;
+	line-height: 0.9;
+	font-variant-numeric: tabular-nums;
 }
 
-/* Boycott */
+/* Boycott: each brand is a tall label with a black head */
 .brands {
 	display: grid;
 	gap: 2rem;
@@ -304,18 +465,21 @@ h3 {
 	gap: 0.5rem 1rem;
 	padding: 0.75rem 1.25rem;
 	background: var(--ink);
+	border-bottom: 10px solid var(--coral);
 	color: var(--paper);
 }
 
 .brand__name {
+	margin: 0;
 	font-size: clamp(2.25rem, 6vw, 3.25rem);
+	font-weight: 900;
 }
 
 .brand__sector {
-	font-family: var(--title);
-	font-size: 1.125rem;
-	text-transform: uppercase;
-	color: var(--yellow);
+	font-weight: 600;
+	font-size: 1.0625rem;
+	line-height: 1.3;
+	opacity: 0.8;
 }
 
 .brand__summary {
@@ -326,6 +490,7 @@ h3 {
 }
 
 .brand__body {
+	max-width: 38rem;
 	padding: 1.25rem;
 }
 
@@ -342,32 +507,46 @@ h3 {
 
 .brand__alternatives,
 .brand__sources {
-	padding: 0 1.25rem 1.25rem;
 	max-width: 38rem;
-}
-
-.brand__alternatives h3,
-.brand__sources h3 {
-	font-size: 1.375rem;
-	margin-bottom: 0.5rem;
+	padding: 0 1.25rem 1.25rem;
 }
 
 .brand__alternatives {
-	border-top: 2px solid var(--border);
-	padding-top: 1.25rem;
 	max-width: none;
-	background: repeating-linear-gradient(
-			-45deg,
-			rgba(245, 196, 0, 0.25) 0 10px,
-			transparent 10px 20px
-		)
-		left top / 100% 6px no-repeat;
+	margin: 0 1.25rem;
+	padding: 1rem 1.25rem 1.25rem;
+	background: var(--yellow);
 }
 
-/* Entities */
+.brand__sources {
+	padding-top: 1.25rem;
+	color: var(--grey);
+	font-size: 0.9375rem;
+}
+
+.brand h3 {
+	margin-bottom: 0.5rem;
+	font-size: 1.375rem;
+}
+
+.brand ul {
+	padding-left: 1.1em;
+	list-style: disc;
+}
+
+.brand li + li {
+	margin-top: 0.25rem;
+}
+
+.brand__sources a {
+	color: inherit;
+	text-underline-offset: 0.2em;
+}
+
+/* Entities: linked groups are black boxes, the rest outlined */
 .entities__list {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
 	gap: 0.75rem;
 }
 
@@ -379,55 +558,80 @@ h3 {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	justify-content: end;
 	gap: 0.625rem;
-	min-height: 7rem;
-	padding: 0.875rem 0.75rem;
+	min-height: 7.5rem;
+	padding: 0.875rem 1rem;
 	border: 2px solid var(--border);
 	color: var(--ink);
 	text-decoration: none;
 }
 
+@media (max-width: 30rem) {
+	.entity__box {
+		min-height: 6rem;
+	}
+}
+
+a.entity__box {
+	background: var(--ink);
+	color: var(--paper);
+}
+
 a.entity__box:hover {
-	background: var(--yellow);
+	background: var(--coral);
+	color: var(--ink);
 }
 
 .entity__logo {
 	width: auto;
 	max-width: 100%;
-	max-height: 3.5rem;
+	max-height: 2.75rem;
+	margin-bottom: auto;
+	padding: 2px;
+	background: var(--paper);
 	object-fit: contain;
+	object-position: left;
 }
 
 .entity__name {
 	font-family: var(--title);
-	font-size: 0.9375rem;
+	font-size: 1rem;
+	font-weight: 700;
 	line-height: 1.15;
-	text-align: center;
 	text-transform: uppercase;
 	text-wrap: balance;
 }
 
-/* Marks a link that leaves the site and opens in a new tab */
-.entity__external {
-	width: 0.7em;
-	height: 0.7em;
-	margin-left: 0.2em;
-	vertical-align: 0.02em;
-}
-
+/* Footer: the name small, then the band closes the page */
 .footer {
 	margin-top: 4rem;
-	padding-top: 1rem;
-	border-top: 3px solid var(--border);
+	padding-bottom: 1.5rem;
 	font-family: var(--title);
-	font-size: 1.125rem;
 	text-transform: uppercase;
+}
+
+.footer__name {
+	font-size: 1.25rem;
+	font-weight: 700;
 }
 
 .footer__note {
 	color: var(--grey);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.band--foot .site {
+	padding: 1rem 1rem 1.25rem;
+}
+
+.band__motto {
+	color: var(--coral);
+	font-family: var(--title);
+	font-size: 1.5rem;
+	font-weight: 800;
+	text-transform: uppercase;
 }
 
 /* Long text (manifest): short measure and clear hierarchy, no boxes */

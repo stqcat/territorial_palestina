@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import poster from '../assets/boycott-poster.jpg';
+
+interface Props {
+	base: string;
+}
+
+const { base } = Astro.props;
+---
+
+<section class="hero">
+	<div class="hero__text">
+		<h2 class="hero__title">
+			<span class="hero__word">Boicot</span> a Teva, Carrefour i ICL
+		</h2>
+		<p class="lead">
+			Tres empreses que sostenen l'ocupació i el genocidi a Palestina. Deixar de
+			comprar-hi és una decisió a l'abast de tothom, cada setmana, a la farmàcia
+			i al supermercat.
+		</p>
+		<p class="actions">
+			<a class="action" href={`${base}boicot/`}>
+				Com fer el boicot
+			</a>
+			<a class="action action--quiet" href={`${base}qui-som/`}>
+				Qui som
+			</a>
+		</p>
+	</div>
+
+	<figure class="poster poster--hero">
+		<Image
+			src={poster}
+			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices. Teva, Carrefour i ICL. Palestina lliure"
+			widths={[400, 800, 1200]}
+			sizes="(max-width: 48rem) 90vw, 30rem"
+		/>
+	</figure>
+</section>
