@@ -544,6 +544,18 @@ h2 {
 }
 
 /* Entities: linked groups are black boxes, the rest outlined */
+.entities__join {
+	max-width: 36rem;
+	margin-top: 1.5rem;
+	color: var(--grey);
+}
+
+.entities__join a {
+	color: var(--ink);
+	font-weight: 600;
+	text-underline-offset: 0.2em;
+}
+
 .entities__list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
@@ -712,6 +724,19 @@ a.entity__box:hover {
 	font-size: 1rem;
 	font-weight: 500;
 	opacity: 0.7;
+}
+
+.footer__contact {
+	margin-top: 1.25rem;
+	font-size: 1rem;
+	font-weight: 500;
+	opacity: 0.7;
+}
+
+.footer__contact a {
+	color: inherit;
+	text-transform: none;
+	text-underline-offset: 0.2em;
 }
 
 /* Long text (manifest): short measure and clear hierarchy, no boxes */
