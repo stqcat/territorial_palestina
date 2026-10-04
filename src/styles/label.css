@@ -181,6 +181,15 @@ h3 {
 	text-transform: uppercase;
 }
 
+.poster figcaption a {
+	text-underline-offset: 0.2em;
+}
+
+.poster figcaption a:hover {
+	background: var(--yellow);
+	box-shadow: 0 0 0 0.25rem var(--yellow);
+}
+
 .poster--campaign {
 	max-width: 24rem;
 	margin: 2rem 0;

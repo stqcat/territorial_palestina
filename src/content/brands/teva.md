@@ -1,7 +1,7 @@
 ---
 name: Teva
 order: 1
-sector: Farmacèutica
+sector: Indústria farmacèutica
 summary: Multinacional farmacèutica israeliana, principal productora mundial de medicaments genèrics.
 alternatives:
   - Genèrics d'altres laboratoris, sempre amb el consell del metge o del farmacèutic
