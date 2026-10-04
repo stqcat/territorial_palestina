@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import poster from '../assets/boycott-poster.jpg';
 
+// Print-ready A2 version, served as a static file from public/.
+const posterPdf = '/cartell-boicot-a2.pdf';
+
 const brands = (await getCollection('brands')).sort(
 	(a, b) => a.data.order - b.data.order,
 );
@@ -24,13 +27,20 @@ const entries = await Promise.all(
 </section>
 
 <figure class="poster poster--campaign">
-	<Image
-		src={poster}
-		alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
-		widths={[400, 800, 1200]}
-		sizes="(max-width: 48rem) 90vw, 30rem"
-	/>
-	<figcaption>Descarrega el cartell i penja'l al teu barri o poble.</figcaption>
+	<a href={posterPdf} download="cartell-boicot-a2.pdf">
+		<Image
+			src={poster}
+			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices. Teva, Carrefour i ICL. Palestina lliure"
+			widths={[400, 800, 1200]}
+			sizes="(max-width: 48rem) 90vw, 30rem"
+		/>
+	</a>
+	<figcaption>
+		<a href={posterPdf} download="cartell-boicot-a2.pdf">
+			Descarrega el cartell en PDF (A2)
+		</a>{' '}
+		i penja'l al teu barri o poble.
+	</figcaption>
 </figure>
 
 <div class="brands">

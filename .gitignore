@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # reference documents kept locally, not part of the site
 /*.pdf
+
+# campaign source materials kept locally, not part of the site
+materials/

@@ -36,7 +36,7 @@ const organizations = await getCollection('organizations');
 	<figure class="poster">
 		<Image
 			src={poster}
-			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices"
+			alt="Cartell de la campanya: Contra el genocidi i l'ocupació, boicot Israel i els seus còmplices. Teva, Carrefour i ICL. Palestina lliure"
 			widths={[400, 800, 1200]}
 			sizes="(max-width: 48rem) 90vw, 36rem"
 		/>
@@ -52,7 +52,7 @@ const organizations = await getCollection('organizations');
 				<p class="company__sector">{brand.data.sector}</p>
 				<p class="company__summary">{brand.data.summary}</p>
 				<a class="company__link" href={`${base}boicot/#${brand.id}`}>
-					Per què la boicotegem
+					Per què el boicot a {brand.data.name}?
 				</a>
 			</li>
 		))}
@@ -70,6 +70,6 @@ const organizations = await getCollection('organizations');
 		<span>entitats hi participen</span>
 	</p>
 	<a class="action action--quiet" href={`${base}qui-som/`}>
-		Veure les entitats
+		Totes les entitats
 	</a>
 </section>
