@@ -4,8 +4,6 @@ Lloc web de la coordinadora d'entitats de solidaritat amb Palestina dels Països
 
 Quatre pàgines: portada, **Boicot** (les empreses de la campanya), **Manifest** (la Declaració de Terrassa) i **Qui som** (les entitats que formen la coordinadora), més una pàgina d'error.
 
-> **Atenció:** els textos de les marques encara són esborrany i no tenen fonts (`sources: []`). Cal revisar-los i documentar-los abans de publicar el lloc.
-
 ## Posar-lo en marxa
 
 Cal Node 22.12 o superior. El fitxer `.tool-versions` fixa la versió exacta per a qui faci servir asdf o mise; és la mateixa amb què es construeix el lloc al desplegament.
@@ -35,6 +33,8 @@ src/
 ├── content/          els textos i les dades (vegeu més avall)
 ├── styles/           base.css (reinici) i label.css (el sistema visual)
 └── assets/           logos i imatges, servits amb astro:assets
+public/               fitxers servits tal qual: CNAME, robots.txt, favicons,
+                      el cartell en PDF i les propostes de disseny
 ```
 
 ## Contingut
@@ -45,7 +45,17 @@ Les dues col·leccions es defineixen a `src/content.config.ts`.
 
 **Organitzacions** (`src/content/organizations.json`) — les entitats de la coordinadora. Cada entrada necessita `id` i `name`; `url` i `logo` són opcionals, i sense `url` la fitxa es dibuixa com una caixa sense enllaç. El camí del logo es resol respecte del fitxer JSON: `../assets/logos/<id>.png`.
 
-El manifest (`src/content/manifest.md`) no és una col·lecció; `manifest.astro` l'importa directament. És la Declaració de Terrassa del 22 de febrer de 2026, transcrita tal com és, amb les signatures incloses.
+Les tres marques tenen el text revisat i les fonts documentades al camp `sources`, que es mostren al final de cada fitxa.
+
+El manifest (`src/content/manifest.md`) no és una col·lecció; `manifest.astro` l'importa directament. És la Declaració de Terrassa del 22 de febrer de 2026, amb les signatures incloses. La llista de signants es manté al dia amb la coordinadora: si una entitat se'n va, s'esborra tant d'`organizations.json` com del manifest.
+
+## Desplegament
+
+El lloc es publica a GitHub Pages amb el domini `territorisambpalestina.cat`. El flux `.github/workflows/deploy.yml` construeix i desplega a cada push a `main`, i també es pot llançar a mà des de la pestanya Actions. El domini es declara a `public/CNAME` i ha de coincidir amb el camp `site` d'`astro.config.mjs`, que serveix per generar els enllaços canònics, les targetes socials i el `sitemap-index.xml`.
+
+## Propostes de disseny
+
+La carpeta `public/alternative-styles/` conté quatre maquetes estàtiques (A Onada, B Cartell, C Etiqueta i D Lletres) per revisar entre els membres de la coordinadora. Es publiquen a `/alternative-styles/` però no s'hi enllaça des d'enlloc, porten `noindex` i `robots.txt` les exclou. No formen part del lloc: quan s'hagi triat una direcció, es porta a `label.css` i la carpeta s'esborra.
 
 ## Convencions
 

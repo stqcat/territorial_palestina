@@ -29,7 +29,9 @@ Two collections, defined in `src/content.config.ts`:
 
 `src/content/manifest.md` is not a collection; `manifest.astro` imports it directly.
 
-`manifest.md` holds the Declaració de Terrassa (22 February 2026) verbatim, signatures included — don't reword it. The brands are still draft: they have `sources: []` and carry explicit "Esborrany" notices. Don't remove those notices or treat that data as verified. The organisations come from the Declaració de Terrassa (22 February 2026); their links were found one by one, so don't invent one for an entry that has none.
+`manifest.md` holds the Declaració de Terrassa (22 February 2026) with its signatures — don't reword it. The signatory list is kept in step with the coordinator's current membership rather than frozen, so removing a group means removing it from both `organizations.json` and the manifest. Each brand's text is reviewed and documented in its `sources` field; a new brand needs sources too. The organisations come from the Declaració de Terrassa; their links were found one by one, so don't invent one for an entry that has none.
+
+`public/alternative-styles/` holds static design mockups for internal review. They are served but unlinked, carry `noindex` and are excluded in `robots.txt`; they are not part of the site and will be deleted once a direction is chosen.
 
 ## Styles
 

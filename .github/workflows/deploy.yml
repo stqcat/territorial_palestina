@@ -1,9 +1,7 @@
 name: Deploy to GitHub Pages
 
-# Manual only: the content is still a draft and we don't want a push to main
-# to republish the site. To automate it again, add two lines below:
-#   push:
-#     branches: [main]
+# Every push to main republishes the site; workflow_dispatch allows a
+# manual run from the Actions tab (for example to redeploy without a commit).
 on:
   push:
     branches: [main]

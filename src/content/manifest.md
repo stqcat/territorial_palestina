@@ -39,7 +39,6 @@ Emplacem doncs a tots els espais de solidaritat internacional i a tota la poblac
 - Moviment Solidari amb Palestina de Gramenet
 - Penedès amb Palestina
 - Pla de L'Estany amb Palestina
-- Ras Al Hanout
 - Sant Cugat amb Palestina
 - Solsonès amb Palestina
 - Terrassa Amb Palestina
