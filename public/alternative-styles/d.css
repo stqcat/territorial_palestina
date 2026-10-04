@@ -38,7 +38,7 @@ h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: 1.25rem; }
 .mark span { display: block; letter-spacing: 0.01em; }
 .mark__l1 { font-size: 1em; }
 .mark__l2 { font-size: 0.735em; letter-spacing: 0.035em; }
-.mark__l3 { font-size: 1.04em; }
+.mark__l3 { font-size: 1.01em; }
 .wave--mark { margin-top: 0.75rem; max-width: 100%; }
 .mark--small { font-size: 1.55rem; line-height: 0.86; }
 .lead { max-width: 32rem; margin-top: 1rem; font-size: 1.1875rem; }
@@ -118,3 +118,6 @@ a.entity__box:hover { background: var(--coral); color: var(--ink); }
 .band--foot p { font: 800 1.5rem/1 var(--title); text-transform: uppercase; color: var(--coral); }
 
 @media (max-width: 30rem) { .entity__box { min-height: 6rem; } }
+
+/* The P keeps the logo's map inside its bowl; it sits on the baseline at cap height */
+.mark__p { display: inline-block; height: 0.715em; width: auto; vertical-align: baseline; margin-right: 0.015em; }
