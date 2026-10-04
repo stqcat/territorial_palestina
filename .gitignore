@@ -30,4 +30,4 @@ pnpm-debug.log*
 /*.pdf
 
 # campaign source materials kept locally, not part of the site
-materials/
+/materials/
