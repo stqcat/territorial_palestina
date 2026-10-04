@@ -121,3 +121,6 @@ a.entity__box:hover { background: var(--coral); color: var(--ink); }
 
 /* The P keeps the logo's map inside its bowl; it sits on the baseline at cap height */
 .mark__p { display: inline-block; height: 0.715em; width: auto; vertical-align: baseline; margin-right: 0.015em; }
+
+/* The I is the logo's Palestine silhouette; it overshoots cap height and baseline like in the logo */
+.mark__i { display: inline-block; height: 0.85em; width: auto; vertical-align: -0.075em; margin: 0 0.01em; }
