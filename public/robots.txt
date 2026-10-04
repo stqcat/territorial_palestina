@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /alternative-styles/
 
 Sitemap: https://territorisambpalestina.cat/sitemap-index.xml

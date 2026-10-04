@@ -1,0 +1,27 @@
+@font-face { font-family: 'Barlow'; font-weight: 400; src: url(fonts/barlow-latin-400-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow'; font-weight: 600; src: url(fonts/barlow-latin-600-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow'; font-weight: 700; src: url(fonts/barlow-latin-700-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 500; src: url(fonts/barlow-condensed-latin-500-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 600; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 700; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 800; src: url(fonts/barlow-condensed-latin-800-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 900; src: url(fonts/barlow-condensed-latin-900-normal.woff2) format('woff2'); font-display: swap; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid var(--coral, #e25947); outline-offset: 3px; }
+
+/* Proposal switcher (review chrome only, not part of the design) */
+.switcher {
+	position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 99;
+	display: flex; gap: 2px; padding: 3px;
+	background: #222; border-radius: 6px; font: 600 12px/1 system-ui, sans-serif;
+	box-shadow: 0 4px 16px rgba(0,0,0,.3);
+}
+.switcher a { padding: 6px 9px; color: #ddd; text-decoration: none; border-radius: 4px; }
+.switcher a:hover { background: #444; color: #fff; }
+.switcher a[aria-current] { background: #fff; color: #000; }
