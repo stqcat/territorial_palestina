@@ -603,35 +603,36 @@ a.entity__box:hover {
 	text-wrap: balance;
 }
 
-/* Footer: the name small, then the band closes the page */
+/* Footer: the closing band carries the motto and the name */
+.content {
+	padding-bottom: 4rem;
+}
+
+.footer .site {
+	padding: 1rem 1rem 1.5rem;
+}
+
 .footer {
-	margin-top: 4rem;
-	padding-bottom: 1.5rem;
 	font-family: var(--title);
 	text-transform: uppercase;
 }
 
+.footer__motto {
+	color: var(--coral);
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+
 .footer__name {
+	margin-top: 1.25rem;
 	font-size: 1.25rem;
 	font-weight: 700;
 }
 
 .footer__note {
-	color: var(--grey);
 	font-size: 1rem;
 	font-weight: 500;
-}
-
-.band--foot .site {
-	padding: 1rem 1rem 1.25rem;
-}
-
-.band__motto {
-	color: var(--coral);
-	font-family: var(--title);
-	font-size: 1.5rem;
-	font-weight: 800;
-	text-transform: uppercase;
+	opacity: 0.7;
 }
 
 /* Long text (manifest): short measure and clear hierarchy, no boxes */
