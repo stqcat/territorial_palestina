@@ -35,6 +35,7 @@ Emplacem doncs a tots els espais de solidaritat internacional i a tota la poblac
 - Free Palestina Sant Andreu (Harmonia i Iaioflautas)
 - La Floresta por Palestina La Florestacontrafronteras
 - La Seu per Palestina
+- L'Hospitalet amb el Poble Palestí
 - Moianès amb Palestina
 - Moviment Solidari amb Palestina de Gramenet
 - Penedès amb Palestina
