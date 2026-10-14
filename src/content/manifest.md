@@ -28,7 +28,7 @@ Emplacem doncs a tots els espais de solidaritat internacional i a tota la poblac
 - Alt Empordà amb Palestina
 - Assembla de suport Palestina Baix Montseny - Vallès Oriental
 - BDS Maresme
-- Cerdanyola amb Palestina
+- Cerdanyola amb Palestina - Solidaritat Internacionalista
 - Comitè de solidaritat amb Palestina de Sabadell
 - Comitè de Solidaritat de Nou Barris amb Palestina
 - Comitè de Solidaritat de Sants amb Palestina
